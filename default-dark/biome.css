@@ -1,0 +1,545 @@
+h1 
+{
+    font-size: 2.0rem;
+}
+h2 
+{
+    font-size: 1.6rem;
+}
+h3, h4, h5, h6 
+{
+    font-size: 1.4rem;
+}
+
+nav, h1, 
+body.documentation section.parameters dl dt, 
+body.documentation div.upper aside h2, 
+#search-input, 
+body.documentation section.introduction span.package,
+body.documentation section.platforms ul
+{
+    font-family: 'Swiftinit Code';
+}
+
+/* colors */
+body.documentation section.introduction div.eyebrows, 
+body.documentation div.lower ul code.signature
+{
+    /* gray (background) */
+    color: rgb(140, 140, 140);
+}
+nav ol.breadcrumbs-container li:last-child, 
+nav div.search-bar form ol li a,
+body.documentation section.introduction span.nationality a,
+ul.availability-list 
+{
+    /* red */
+    color: rgb(240, 81, 66);
+}
+
+/* layout */
+body 
+{
+    margin: 0;
+}
+nav 
+{
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+}
+nav div.breadcrumbs
+{
+    background-color: #101010;
+    border-bottom: 0.3rem #080808 solid;
+}
+nav div.breadcrumbs
+{
+    padding: 1rem 0;
+}
+nav ol.breadcrumbs-container 
+{
+    margin: 0;
+    font-weight: 700;
+    min-width: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+nav ol.breadcrumbs-container li a 
+{
+    color: inherit;
+}
+nav ol.breadcrumbs-container li 
+{
+    display: inline-block;
+    margin-right: 0.25em;
+    min-width: 0;
+    vertical-align: middle;
+    color: #aaaaaa;
+}
+nav ol.breadcrumbs-container li:after
+{
+    margin-left: 0.25em;
+    content: '.';
+    color: #666666;
+}
+nav ol.breadcrumbs-container li:last-child:after
+{
+    content: '';
+}
+
+
+/* search bar */ 
+#search 
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#search  div.input-container 
+{
+    display: flex;
+    flex-direction: row;
+}
+
+#search div.input-container div.bevel 
+{
+    position: relative;
+    height: 3.6rem;
+    width: 0;
+}
+#search div.input-container div.bevel:first-child 
+{
+    direction: rtl;
+}
+#search div.input-container div.rectangle
+{
+    background: #080808;
+}
+#search div.input-container div.bevel:last-child 
+{
+    direction: ltr;
+}
+#search div.input-container div.bevel:before, 
+#search div.input-container div.bevel:after
+{
+    position: absolute;
+    display: block;
+    border-style: solid;
+    border-width: 1.8rem 10px;
+    content: '';
+}
+#search div.input-container div.bevel:first-child:after 
+{
+    border-color: #101010 #101010 transparent transparent;
+
+}
+#search div.input-container div.bevel:first-child:before 
+{
+    border-color: #080808 #080808 transparent transparent;
+}
+#search div.input-container div.bevel:last-child:after 
+{
+    border-color: #101010 transparent transparent #101010;
+
+}
+#search div.input-container div.bevel:last-child:before 
+{
+    border-color: #080808 transparent transparent #080808;
+}
+#search div.input-container div.bevel:after,
+#search-input
+{
+    top: -0.3rem;
+}
+
+#search-input 
+{
+    position: relative;
+    display: block;
+    height: 100%;
+    width: 100%;
+    padding: 0 1.5rem;
+    border-radius: 0;
+    
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    text-align: center;
+    
+    background-color: #101010;
+    color: #ccc;
+}
+#search-results
+{
+    display: flex; 
+    padding: 0;
+    list-style-type: none;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1rem;
+}
+#search-results
+{
+    margin: 0.5rem 0 0 0; 
+    padding: 0;
+}
+
+#search #search-results li
+{
+    display: block;
+}
+@media (hover: hover) and (pointer: fine) 
+{
+    #search #search-results li
+    {
+        display: none;
+    }
+    #search:focus-within #search-results li
+    {
+        display: block;
+    }
+}
+
+#search-results li a
+{
+    margin: 0.25rem 0;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #101010;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.3rem 0 #080808;
+}
+#search-results li a:hover,
+#search-results li a:focus, 
+#search-results li.selected a
+{
+    color: #101010;
+    background-color: rgb(240, 81, 66);
+    box-shadow: 0 0.3rem 0 rgb(180, 40, 30);
+    text-decoration: none;
+}
+
+/* nav ol li a 
+{
+    color: #eeeeee;
+} */
+/* github icon */
+/* nav li.github-icon-container a 
+{
+    border-radius: 10em;
+    display: inline-block;
+    padding: 4px;
+    border: 1px solid transparent;
+    line-height: 0;
+}
+nav li.github-icon-container a:hover 
+{
+    border: 1px solid #eeeeee;
+}
+nav li.github-icon-container .github-icon 
+{
+    display: inline-block;
+    width:  1.25em;
+    height: 1.25em;
+    background-image: url('/github-icon.svg');
+} */
+nav div.breadcrumbs ol.breadcrumbs-container,
+nav div.search-bar form, 
+div.upper-container, 
+div.lower-container 
+{
+    margin: 0 auto 0 auto;
+    max-width: 48rem;
+    position: relative;
+}
+nav ol.breadcrumbs-container,
+div.upper-container, 
+div.lower-container 
+{
+    padding: 0 1.5rem;
+}
+div.upper 
+{
+    padding: 6rem 0 2rem;
+}
+div.lower 
+{
+    padding-top: 1rem;
+    
+}
+body.documentation section.introduction 
+{
+    margin-top: 4rem;
+    padding: 0 0 1rem;
+    border-bottom: 2px solid rgb(240, 81, 66);
+}
+body.documentation section.introduction div.eyebrows 
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+    font-style: italic;
+}
+
+body.documentation section.introduction span.nationality span.metropole:after 
+{
+    content: '/';
+    padding: 0 0.25rem;
+}
+body.documentation section.introduction ul.relationships-list,
+body.documentation div.lower ul.relationships-list,
+body.documentation div.lower ul.availability-list,
+body.documentation div.lower p.relationship 
+{
+    font-size: 0.9rem;
+}
+body.documentation section.introduction ul.relationships-list
+{
+    padding-left: 0;
+    color: #999;
+    list-style-type: none;
+}
+body.documentation section.introduction ul.relationships-list li
+{
+    margin: 0.25rem 0;
+}
+body.documentation section.introduction ul.relationships-list li p
+{
+    margin: 0;
+}
+
+body.documentation ul.availability-list
+{
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+body.documentation ul.availability-list li 
+{
+    margin: 0;
+}
+body.documentation ul.availability-list li p
+{
+    margin: 0;
+}
+body.documentation section.platforms ul
+{
+    margin: 1rem 0 0 0;
+    padding: 0;
+    list-style-type: none;
+    font-size: 0.8rem;
+    font-weight: 700;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+body.documentation section.platforms ul li
+{
+    display: inline-block;
+    background: rgb(240, 81, 66);
+    color: rgb(20, 20, 20);
+    border-radius: 0.25rem;
+    padding: 0.1rem 0.5rem 0.1rem;
+    margin: 0;
+}
+
+body.documentation h1 
+{
+    margin: 1rem 0;
+}
+body.documentation h2, 
+body.documentation h3, 
+body.documentation h4 
+{
+    font-weight: 700;
+}
+body.documentation div.upper h2 
+{
+    margin: 2rem 0 1rem 0;
+}
+body.documentation div.upper h3,
+body.documentation div.upper h4,
+body.documentation div.upper h5,
+body.documentation div.upper h6
+{
+    margin: 1rem 0;
+}
+body.documentation section.parameters dl 
+{
+    counter-set: parameter-index -1;
+}
+body.documentation section.parameters dl dt
+{
+    font-weight: 700;
+    margin-top: 2rem;
+    counter-increment: parameter-index;
+}
+body.documentation section.parameters dl dt:before
+{
+    content: '$' counter(parameter-index);
+    display: inline-block;
+    min-width: 3rem;
+    color: #444;
+    font-weight: normal;
+}
+body.documentation section.parameters dl dd, 
+body.documentation section.returns > *
+{
+    margin-left: 3rem;
+}
+body.documentation section.returns > h2
+{
+    margin-left: inherit;
+}
+
+body.documentation section.declaration pre
+{
+    text-indent: -2.5rem;
+    padding-left: 2.5rem;
+    margin: 2.5rem 0 2.5rem;
+}
+body.documentation section.declaration pre code, 
+body.documentation div.lower ul li code.signature 
+{
+    font-size: 100%;
+}
+body.documentation section.discussion pre 
+{
+    margin: 2rem 0 2rem;
+}
+
+body.documentation div.lower ul li code.signature 
+{
+    line-height: 1.5rem;
+    display: block;
+    text-indent: -2.5rem;
+}
+body.documentation div.lower h2 
+{
+    margin: 1rem 0;
+}
+body.documentation div.lower h3 
+{
+    margin: 1rem 0;
+}
+body.documentation section.topics h3
+{
+    padding: 1.1rem 0;
+}
+body.documentation section.topics .topic-container,
+body.documentation div.lower section.relationships 
+{
+    border-top: solid 1px #333;
+}
+body.documentation section.topics .topic-container-left 
+{
+    font-style: italic;
+}
+
+@media only screen and (min-width: 50rem)
+{
+    div.upper 
+    {
+        padding-top: 4rem;
+    }
+    article h1
+    {
+        font-size: 2.25rem;
+    }
+    body.documentation section.introduction ul.relationships-list p, 
+    body.documentation section.introduction ul.availability-list p 
+    {
+        font-size: inherit;
+    }
+    body.documentation section.topics .topic-container 
+    {
+        display: flex;
+        flex-direction: row;
+    }
+    body.documentation section.topics .topic-container-left 
+    {
+        flex: 0 0 10rem;
+        margin-right: 2rem;
+    }
+    body.documentation section.topics .topic-container-right 
+    {
+        min-width: 0;
+        margin-top: 1.5rem;
+    }
+}
+
+body.documentation div.lower ul
+{
+    padding: 0;
+    list-style-type: none;
+}
+body.documentation div.lower h2 
+{
+    font-style: italic;
+}
+body.documentation div.lower section.relationships h2 
+{
+    padding: 0.5rem 0 0.5rem 0;
+}
+body.documentation div.lower section.topics h2 
+{
+    padding: 1rem 0 0 0;
+}
+
+body.documentation div.lower section.relationships ul li
+{
+    margin: 0 0 0 2.5rem;
+}
+body.documentation div.lower section.topics ul li
+{
+    margin-bottom: 1.5rem;
+}
+body.documentation div.lower ul li p
+{
+    margin: 0 0 1rem 2.5rem;
+}
+body.documentation div.lower section.relationships ul li code.signature 
+{
+    padding: 0.25rem 0 0.25rem 2.5rem;
+}
+body.documentation div.lower section.topics ul li code.signature 
+{
+    padding: 0.8em 0 0.8rem 2.5rem;
+}
+body.documentation div.lower ul li code.signature a
+{
+    color: inherit;
+}
+body.documentation div.lower ul li code.signature .syntax-parameter-label, 
+body.documentation div.lower ul li code.signature .syntax-identifier,
+body.documentation div.lower ul li code.signature .syntax-keyword-identifier 
+{
+    color: rgb(240, 81, 66);
+}
+body.documentation div.lower section.topics ul.relationships-list li, 
+body.documentation div.lower section.topics ul.availability-list li 
+{
+    margin: 0;
+}
+body.documentation div.lower section.topics ul.relationships-list li p,
+body.documentation div.lower section.relationships p.relationship
+{
+    color: #999;
+}
+
+body.documentation div.upper aside 
+{
+    color: #888;
+}
+body.documentation div.upper aside h2
+{
+    font-size: 1rem;
+    text-transform: lowercase;
+}
+body.documentation div.upper aside h2:after 
+{
+    content: ':';
+}

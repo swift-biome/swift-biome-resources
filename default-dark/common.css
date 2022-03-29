@@ -1,0 +1,209 @@
+@font-face 
+{
+    font-family:   'Swiftinit Text';
+    font-weight:    400;
+    font-style:     normal;
+    src:    url("/text-45.woff2") format('woff2'), 
+            url("/text-45.ttf") format('truetype');
+}
+@font-face 
+{
+    font-family:   'Swiftinit Text';
+    font-weight:    400;
+    font-style:     italic;
+    src:    url("/text-47.woff2") format('woff2'), 
+            url("/text-47.ttf") format('truetype');
+}
+@font-face 
+{
+    font-family:   'Swiftinit Text';
+    font-weight:    700;
+    font-style:     normal;
+    src:    url("/text-65.woff2") format('woff2'), 
+            url("/text-65.ttf") format('truetype');
+}
+@font-face 
+{
+    font-family:   'Swiftinit Text';
+    font-weight:    700;
+    font-style:     italic;
+    src:    url("/text-67.woff2") format('woff2'), 
+            url("/text-67.ttf") format('truetype');
+}
+@font-face 
+{
+    font-family:   'Swiftinit Code';
+    font-weight:    400;
+    font-style:     normal;
+    src:    url("/code-45.woff2") format('woff2'), 
+            url("/code-45.otf") format('opentype');
+}
+@font-face 
+{
+    font-family:   'Swiftinit Code';
+    font-weight:    400;
+    font-style:     italic;
+    src:    url("/code-47.woff2") format('woff2'), 
+            url("/code-47.otf") format('opentype');
+}
+@font-face 
+{
+    font-family:   'Swiftinit Code';
+    font-weight:    700;
+    font-style:     normal;
+    src:    url("/code-75.woff2") format('woff2'), 
+            url("/code-75.otf") format('opentype');
+}
+@font-face 
+{
+    font-family:   'Swiftinit Code';
+    font-weight:    700;
+    font-style:     italic;
+    src:    url("/code-77.woff2") format('woff2'), 
+            url("/code-77.otf") format('opentype');
+}
+
+html 
+{
+    font-size: 1.0rem;
+}
+body 
+{
+    background-color: rgb(20, 20, 20);
+    font-family: 'Swiftinit Text';
+    overflow-wrap: break-word;
+    color: rgb(200, 200, 200);
+    padding-bottom: 20rem;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+}
+h1, h2, h3 
+{
+    font-weight: normal;
+}
+
+code
+{
+    font-family: 'Swiftinit Code';
+    white-space: pre-wrap;
+    hyphens: none;
+    font-size: 93.75%;
+}
+a 
+{
+    text-decoration: none;
+}
+a:hover, a:focus 
+{
+    text-decoration: underline;
+    text-underline-offset: 0.35em;
+}
+
+/* colors */
+code.swift
+{
+    /* gray (background) */
+    color: rgb(140, 140, 140);
+}
+code.swift .syntax-identifier, 
+code.swift .syntax-parameter-label
+{
+    /* off-white */
+    color: rgb(200, 200, 200);
+}
+a, 
+code.swift .syntax-type, 
+code.swift .syntax-generic
+{
+    /* yellow */
+    color: rgb(255, 157, 32);
+}
+
+code.swift .syntax-pseudo-identifier 
+{
+    /* orange */
+    color: rgb(253, 39, 99);
+}
+code.swift .syntax-keyword
+{
+    /* red */
+    color: rgb(240, 81, 66);
+}
+code.swift .syntax-interpolation-anchor
+{
+    /* pink */
+    color: rgb(255, 86, 158);
+}
+code.swift .syntax-literal
+{
+    /* lavender */
+    color: rgb(169, 138, 255);
+}
+
+/* code blocks */ 
+article pre
+{
+    line-height: 1.5rem;
+    font-size: 1rem;
+}
+article pre.notebook
+{
+    counter-set: line -1;
+}
+article pre.notebook .syntax-newline 
+{
+    counter-increment: line;
+}
+article pre.notebook code .syntax-newline:after
+{
+    position: relative;
+    display: inline-block;
+    content: counter(line);
+    width: 0;
+    right: 2rem;
+    color: #444;
+    direction: rtl;
+    word-wrap: normal;
+}
+
+/* code spans */
+code:before, code:after
+{
+    font-family: 'Swiftinit Text';
+}
+code:before
+{
+    content: '\20';
+}
+code:after
+{
+    content: '\20';
+}
+pre code:before, article p code:before, 
+pre code:after,  article p code:after
+{
+    content: none;
+}
+/* code wells */ 
+article p code 
+{
+    background-color: #222;
+    padding: 0.2rem 0.5rem 0.25rem;
+    line-height: 0;
+    border-radius: 0.4rem;
+}
+@media only screen and (min-width: 50rem)
+{
+    article p 
+    {
+        font-size: 1.1rem;
+    }
+    article p code 
+    {
+        font-size: 0.96rem;
+    }
+    article aside p 
+    {
+        font-size: inherit;
+    }
+}
