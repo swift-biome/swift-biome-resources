@@ -84,7 +84,7 @@ h1, h2, h3
 
 code
 {
-    font-family: 'Swiftinit Code';
+    font-family: 'SFMono-Regular', 'SF Mono', 'Swiftinit Code';
     white-space: pre-wrap;
     hyphens: none;
     font-size: 93.75%;

@@ -18,7 +18,7 @@ body.documentation div.upper aside h2,
 body.documentation section.introduction span.package,
 body.documentation section.platforms ul
 {
-    font-family: 'Swiftinit Code';
+    font-family: 'SFMono-Regular', 'SF Mono', 'Swiftinit Code';
 }
 
 /* colors */
