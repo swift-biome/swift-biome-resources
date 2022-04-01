@@ -529,17 +529,3 @@ body.documentation div.lower section.relationships p.relationship
 {
     color: #999;
 }
-
-body.documentation div.upper aside 
-{
-    color: #888;
-}
-body.documentation div.upper aside h2
-{
-    font-size: 1rem;
-    text-transform: lowercase;
-}
-body.documentation div.upper aside h2:after 
-{
-    content: ':';
-}
