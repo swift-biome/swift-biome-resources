@@ -192,10 +192,17 @@ article p code
     line-height: 0;
     border-radius: 0.4rem;
 }
+
+article p 
+{
+    line-height: 1.8rem;
+    hyphens: auto;
+}
 @media only screen and (min-width: 50rem)
 {
     article p 
     {
+        line-height: 1.9rem;
         font-size: 1.1rem;
     }
     article p code 
