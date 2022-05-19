@@ -1,0 +1,30 @@
+#!/bin/bash 
+
+SWIFT_STANDARD_LIBRARY="swift-standard-library"
+SWIFT_CORE_LIBRARIES="swift-core-libraries"
+
+mkdir -p $SWIFT_STANDARD_LIBRARY
+rm -rf $SWIFT_STANDARD_LIBRARY/*
+
+for MODULE in $(cat $SWIFT_STANDARD_LIBRARY.txt)
+do
+    MODULE_DIRECTORY="$SWIFT_STANDARD_LIBRARY/$MODULE"
+    mkdir -p $MODULE_DIRECTORY
+    swift-symbolgraph-extract -skip-inherited-docs \
+        -output-dir $MODULE_DIRECTORY \
+        -target x86_64-unknown-linux-gnu \
+        -module-name $MODULE
+done
+
+mkdir -p $SWIFT_CORE_LIBRARIES
+rm -rf $SWIFT_CORE_LIBRARIES/*
+
+for MODULE in $(cat $SWIFT_CORE_LIBRARIES.txt)
+do
+    MODULE_DIRECTORY="$SWIFT_CORE_LIBRARIES/$MODULE"
+    mkdir -p $MODULE_DIRECTORY
+    swift-symbolgraph-extract -skip-inherited-docs \
+        -output-dir $MODULE_DIRECTORY \
+        -target x86_64-unknown-linux-gnu \
+        -module-name $MODULE
+done
