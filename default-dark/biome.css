@@ -284,7 +284,7 @@ body.documentation section.introduction div.eyebrows
     font-style: italic;
 }
 
-body.documentation section.introduction span.nationality span.metropole:after 
+body.documentation section.introduction span.nationality span.namespace:after 
 {
     content: '/';
     padding: 0 0.25rem;
