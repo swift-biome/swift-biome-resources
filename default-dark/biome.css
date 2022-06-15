@@ -284,10 +284,23 @@ body.documentation section.introduction div.eyebrows
     font-style: italic;
 }
 
+body.documentation section.introduction span.nationality span.namespace:after,
+body.documentation section.introduction span.nationality span.base:before,
+body.documentation section.introduction span.nationality span.base:after 
+{
+    padding: 0 0.25rem;
+}
 body.documentation section.introduction span.nationality span.namespace:after 
 {
     content: '/';
-    padding: 0 0.25rem;
+}
+body.documentation section.introduction span.nationality span.base:before 
+{
+    content: '(';
+}
+body.documentation section.introduction span.nationality span.base:after 
+{
+    content: ')';
 }
 body.documentation section.introduction ul.relationships-list,
 body.documentation div.lower ul.relationships-list,
