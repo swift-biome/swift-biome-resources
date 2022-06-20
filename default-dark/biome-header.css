@@ -34,7 +34,7 @@ nav.breadcrumbs ol
 nav.breadcrumbs ol li 
 {
     display: inline-block;
-    margin-right: 0.25em;
+    margin-right: 0.15em;
     min-width: 0;
     vertical-align: middle;
     color: #aaaaaa;
@@ -44,13 +44,13 @@ nav.breadcrumbs ol li a
     color: inherit;
 }
 
-nav ol.breadcrumbs-container li:after
+nav.breadcrumbs ol li:after
 {
-    margin-left: 0.25em;
+    margin-left: 0.15em;
     content: '.';
     color: #666666;
 }
-nav ol.breadcrumbs-container li:last-child:after
+nav.breadcrumbs ol li:last-child:after
 {
     content: '';
 }
