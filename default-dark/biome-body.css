@@ -1,0 +1,359 @@
+h1 
+{
+    font-size: 2.0rem;
+}
+h2 
+{
+    font-size: 1.6rem;
+}
+h3
+{
+    font-size: 1.4rem;
+}
+h4, h5, h6 
+{
+    font-size: 1.25rem;
+}
+
+header, 
+#search-input, 
+h1, 
+body section.parameters dl dt, 
+body div.upper aside h2, 
+body section.platforms ul
+{
+    font-family: 'SFMono-Regular', 'SF Mono', 'Swiftinit Code';
+}
+
+/* colors */
+.eyebrows, 
+a.signature
+{
+    /* gray (background) */
+    color: rgb(140, 140, 140);
+}
+
+nav.breadcrumbs ol li:last-child, 
+header form ol li a,
+header .versions,
+.nationality a,
+.availability-list,
+a.signature .syntax-parameter-label, 
+a.signature .syntax-identifier,
+a.signature .syntax-keyword-identifier 
+{
+    /* red */
+    color: rgb(240, 81, 66);
+}
+
+/* layout */
+body 
+{
+    margin: 0;
+}
+
+
+/* github icon */
+/* nav li.github-icon-container a 
+{
+    border-radius: 10em;
+    display: inline-block;
+    padding: 4px;
+    border: 1px solid transparent;
+    line-height: 0;
+}
+nav li.github-icon-container a:hover 
+{
+    border: 1px solid #eeeeee;
+}
+nav li.github-icon-container .github-icon 
+{
+    display: inline-block;
+    width:  1.25em;
+    height: 1.25em;
+    background-image: url('/github-icon.svg');
+} */
+
+nav ol.breadcrumbs-container,
+div.upper-container, 
+div.lower-container 
+{
+    padding: 0 1.5rem;
+}
+div.upper 
+{
+    padding: 6rem 0 2rem;
+}
+div.lower 
+{
+    padding-top: 1rem;
+    
+}
+body section.introduction 
+{
+    margin-top: 4rem;
+    padding: 0 0 1rem;
+    border-bottom: 2px solid rgb(240, 81, 66);
+}
+body section.introduction div.eyebrows 
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+    font-style: italic;
+}
+
+body section.introduction span.nationality span.namespace:after,
+body section.introduction span.nationality span.base:before,
+body section.introduction span.nationality span.base:after 
+{
+    padding: 0 0.25rem;
+}
+body section.introduction span.nationality span.namespace:after 
+{
+    content: '/';
+}
+body section.introduction span.nationality span.base:before 
+{
+    content: '(';
+}
+body section.introduction span.nationality span.base:after 
+{
+    content: ')';
+}
+body section.introduction ul.relationships-list,
+body div.lower p
+{
+    font-size: 0.9rem;
+}
+body section.introduction ul.relationships-list
+{
+    padding-left: 0;
+    color: #999;
+    list-style-type: none;
+}
+body section.introduction ul.relationships-list li
+{
+    margin: 0.25rem 0;
+}
+body section.introduction ul.relationships-list li p
+{
+    margin: 0;
+}
+
+body ul.availability-list
+{
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+body ul.availability-list li 
+{
+    margin: 0;
+}
+body ul.availability-list li p
+{
+    margin: 0;
+}
+body section.platforms ul
+{
+    margin: 1rem 0 0 0;
+    padding: 0;
+    list-style-type: none;
+    font-size: 0.8rem;
+    font-weight: 700;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+body section.platforms ul li
+{
+    display: inline-block;
+    background: rgb(240, 81, 66);
+    color: rgb(20, 20, 20);
+    border-radius: 0.25rem;
+    padding: 0.1rem 0.5rem 0.1rem;
+    margin: 0;
+}
+
+body h1 
+{
+    margin: 1rem 0;
+}
+body h2, 
+body h3, 
+body h4 
+{
+    font-weight: 700;
+}
+body div.upper h2 
+{
+    margin: 2rem 0 1rem 0;
+}
+body div.upper h3,
+body div.upper h4,
+body div.upper h5,
+body div.upper h6
+{
+    margin: 1rem 0;
+}
+body section.parameters dl 
+{
+    counter-set: parameter-index -1;
+}
+body section.parameters dl dt
+{
+    font-weight: 700;
+    margin-top: 2rem;
+    counter-increment: parameter-index;
+}
+body section.parameters dl dt:before
+{
+    content: '$' counter(parameter-index);
+    display: inline-block;
+    min-width: 3rem;
+    color: #444;
+    font-weight: normal;
+}
+body section.parameters dl dd, 
+body section.returns > *
+{
+    margin-left: 3rem;
+}
+body section.returns > h2
+{
+    margin-left: inherit;
+}
+
+body section.declaration pre
+{
+    text-indent: -2.5rem;
+    padding-left: 2.5rem;
+    margin: 2.5rem 0 2.5rem;
+}
+body section.declaration pre code, 
+body div.lower ul li a.signature code
+{
+    font-size: 100%;
+}
+body section.discussion pre 
+{
+    margin: 2rem 0 2rem;
+}
+
+body div.lower ul li a.signature  
+{
+    line-height: 1.5rem;
+    display: block;
+    text-indent: -2.5rem;
+}
+body div.lower h2 
+{
+    margin: 1rem 0;
+}
+body div.lower h3 
+{
+    margin: 1rem 0;
+}
+body section.topics h3
+{
+    padding: 1.1rem 0;
+}
+body section.topics .topic-container,
+body div.lower section.relationships 
+{
+    border-top: solid 1px #333;
+}
+body section.topics .topic-container-left 
+{
+    font-style: italic;
+}
+
+@media only screen and (min-width: 50rem)
+{
+    div.upper 
+    {
+        padding-top: 4rem;
+    }
+    article h1
+    {
+        font-size: 2.25rem;
+    }
+    body section.introduction ul.relationships-list p, 
+    body section.introduction ul.availability-list p 
+    {
+        font-size: inherit;
+    }
+    body section.topics .topic-container 
+    {
+        display: flex;
+        flex-direction: row;
+    }
+    body section.topics .topic-container-left 
+    {
+        flex: 0 0 10rem;
+        margin-right: 2rem;
+    }
+    body section.topics .topic-container-right 
+    {
+        min-width: 0;
+        margin-top: 1.5rem;
+    }
+}
+
+body div.lower ul
+{
+    padding: 0;
+    list-style-type: none;
+}
+body div.lower h2 
+{
+    font-style: italic;
+}
+body div.lower section.relationships h2 
+{
+    padding: 0.5rem 0 0.5rem 0;
+}
+body div.lower section.topics h2 
+{
+    padding: 1rem 0 0 0;
+}
+
+body div.lower section.relationships ul li
+{
+    margin: 0 0 0 2.5rem;
+}
+body div.lower section.topics ul li
+{
+    margin-bottom: 1.5rem;
+}
+body div.lower ul li p
+{
+    margin: 0 0 1rem 2.5rem;
+}
+body div.lower section.related ul li a.signature 
+{
+    padding: 0.25rem 0 0.25rem 2.5rem;
+}
+body div.lower section.topics ul li a.signature 
+{
+    padding: 0.8em 0 0.8rem 2.5rem;
+}
+
+body div.lower ul li code.signature .syntax-parameter-label, 
+body div.lower ul li code.signature .syntax-identifier,
+body div.lower ul li code.signature .syntax-keyword-identifier 
+{
+    color: rgb(240, 81, 66);
+}
+body div.lower section.topics ul.relationships-list li, 
+body div.lower section.topics ul.availability-list li 
+{
+    margin: 0;
+}
+body div.lower section.topics ul.relationships-list li p,
+body div.lower section.relationships p.relationship
+{
+    color: #999;
+}

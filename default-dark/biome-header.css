@@ -1,0 +1,287 @@
+nav.breadcrumbs ol,
+nav div.search-bar form, 
+div.upper-container, 
+div.lower-container 
+{
+    margin: 0 auto 0 auto;
+    max-width: 48rem;
+    position: relative;
+}
+
+header 
+{
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+}
+
+nav.breadcrumbs
+{
+    background-color: #101010;
+    border-bottom: 0.3rem #080808 solid;
+    font-size: 0.9rem;
+    padding: 0.5em 0;
+}
+nav.breadcrumbs ol 
+{
+    padding: 0;
+    font-weight: 700;
+    min-width: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+nav.breadcrumbs ol li 
+{
+    display: inline-block;
+    margin-right: 0.25em;
+    min-width: 0;
+    vertical-align: middle;
+    color: #aaaaaa;
+}
+nav.breadcrumbs ol li a 
+{
+    color: inherit;
+}
+
+nav ol.breadcrumbs-container li:after
+{
+    margin-left: 0.25em;
+    content: '.';
+    color: #666666;
+}
+nav ol.breadcrumbs-container li:last-child:after
+{
+    content: '';
+}
+
+.toolbar 
+{
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.toolbar > * 
+{
+    background-color: #101010;
+    border-bottom: 0.3rem #080808 solid;
+}
+.toolbar > *:first-child 
+{
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+}
+.toolbar > *:last-child 
+{
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+}
+
+#search-input, 
+#version-menu-input ~ label
+{
+    padding: 0.8rem 1.5rem;
+    display: inline-block;
+    vertical-align: middle;
+}
+#version-menu-input ~ label
+{
+    padding-left: 1rem;
+}
+#version-menu-input ~ label .package
+{
+    font-style: italic;
+}
+#version-menu-input ~ label .version
+{
+    padding-left: 0.75em;
+}
+#version-menu-input ~ label::after 
+{
+    content: '\25BC';
+    margin-left: 0.8rem;
+    font-size: 0.8rem;
+    position: relative;
+    bottom: 0.1rem;
+    opacity: 0.5;
+}
+#version-menu-input:checked ~ label::after 
+{
+    content: '\25B2';
+     bottom: 0.15rem;
+}
+
+#search-results,
+#version-menu-input ~ ol
+{
+    margin: 0;
+    height: 0;
+    list-style-type: none;
+    position: relative;
+    top: 0.75rem;
+}
+
+#version-menu-input 
+{
+    display: none;
+}
+#version-menu-input ~ ol
+{
+    display: none;
+}
+#version-menu-input:checked ~ ol
+{
+    display: block;
+}
+
+#version-menu-input ~ label .version,
+#version-menu-input ~ ol li 
+{
+    font-weight: 700;
+    font-size: 88%;
+}
+#version-menu-input ~ ol li 
+{
+    text-align: right;
+    padding: 0.2rem 2.8rem 0.2rem 1rem;
+    background-color: #101010;
+}
+#version-menu-input ~ ol li a 
+{
+    color: #aaa;
+}
+#version-menu-input ~ ol li:first-child 
+{
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+}
+#version-menu-input ~ ol li:last-child 
+{
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+}
+
+
+#search-input 
+{
+    position: relative;
+    width: 100%;
+    border-radius: 0;
+    
+    border: none;
+    outline: none;
+    font-size: 100%;
+    
+    background: none;
+    color: #ccc;
+}
+
+/* search bar */ 
+/*
+#search 
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#search  div.input-container 
+{
+    display: flex;
+    flex-direction: row;
+}
+
+#search div.input-container div.bevel 
+{
+    position: relative;
+    height: 3.6rem;
+    width: 0;
+}
+#search div.input-container div.bevel:first-child 
+{
+    direction: rtl;
+}
+#search div.input-container div.rectangle
+{
+    background: #080808;
+}
+#search div.input-container div.bevel:last-child 
+{
+    direction: ltr;
+}
+#search div.input-container div.bevel:before, 
+#search div.input-container div.bevel:after
+{
+    position: absolute;
+    display: block;
+    border-style: solid;
+    border-width: 1.8rem 10px;
+    content: '';
+}
+#search div.input-container div.bevel:first-child:after 
+{
+    border-color: #101010 #101010 transparent transparent;
+
+}
+#search div.input-container div.bevel:first-child:before 
+{
+    border-color: #080808 #080808 transparent transparent;
+}
+#search div.input-container div.bevel:last-child:after 
+{
+    border-color: #101010 transparent transparent #101010;
+
+}
+#search div.input-container div.bevel:last-child:before 
+{
+    border-color: #080808 transparent transparent #080808;
+}
+#search div.input-container div.bevel:after,
+#search-input
+{
+    top: -0.3rem;
+}
+
+
+*/
+
+#search-results
+{
+    padding: 0;
+}
+
+#search #search-results li
+{
+    display: block;
+}
+@media (hover: hover) and (pointer: fine) 
+{
+    #search #search-results li
+    {
+        display: none;
+    }
+    #search:focus-within #search-results li
+    {
+        display: block;
+    }
+}
+
+#search-results li a
+{
+    margin: 0.25rem 0;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #101010;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.3rem 0 #080808;
+}
+#search-results li a:hover,
+#search-results li a:focus, 
+#search-results li.selected a
+{
+    color: #101010;
+    background-color: rgb(240, 81, 66);
+    box-shadow: 0 0.3rem 0 rgb(180, 40, 30);
+    text-decoration: none;
+}
