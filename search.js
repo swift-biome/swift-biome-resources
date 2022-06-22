@@ -92,10 +92,13 @@ function suggest(event) {
         
         const item      = document.createElement("li");
         const anchor    = document.createElement("a");
+        const display   = document.createElement("span");
         const module    = document.createElement("span");
         
+        display.appendChild(document.createTextNode(symbol.display));
         module.appendChild(document.createTextNode(symbol.module));
-        anchor.appendChild(document.createTextNode(symbol.display));
+        
+        anchor.appendChild(display);
         anchor.appendChild(module);
         anchor.setAttribute("href", symbol.uri);
         

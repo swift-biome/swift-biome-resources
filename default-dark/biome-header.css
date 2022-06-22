@@ -1,11 +1,15 @@
 nav.breadcrumbs ol,
-nav div.search-bar form, 
+div.toolbar-container, 
 div.upper-container, 
 div.lower-container 
 {
-    margin: 0 auto 0 auto;
+    margin-left: auto;
+    margin-right: auto;
     max-width: 48rem;
     position: relative;
+    
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
 }
 
 header 
@@ -24,7 +28,10 @@ nav.breadcrumbs
 }
 nav.breadcrumbs ol 
 {
-    padding: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
     font-weight: 700;
     min-width: 0;
     display: flex;
@@ -55,29 +62,54 @@ nav.breadcrumbs ol li:last-child:after
     content: '';
 }
 
-.toolbar 
+.toolbar-container
 {
     margin-top: 1rem;
     font-size: 0.9rem;
+}
+.toolbar-container > * 
+{
+    max-width: 32rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+.toolbar 
+{
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    align-items: stretch;
 }
 .toolbar > * 
 {
     background-color: #101010;
-    border-bottom: 0.3rem #080808 solid;
+    box-shadow: 0 0.25rem 0 #080808;
 }
 .toolbar > *:first-child 
 {
-    border-top-left-radius: 1rem;
-    border-bottom-left-radius: 1rem;
+    flex-grow: 1;
+    border-top-left-radius: 0.75rem;
+    border-bottom-left-radius: 0.75rem;
 }
 .toolbar > *:last-child 
 {
-    border-top-right-radius: 1rem;
-    border-bottom-right-radius: 1rem;
+    flex-shrink: 0;
+    border-top-right-radius: 0.75rem;
+    border-bottom-right-radius: 0.75rem;
 }
+
+
+#search-results,
+#version-menu-input ~ ol
+{
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0;
+    height: 0;
+    list-style-type: none;
+    position: relative;
+    top: 0.75rem;
+}
+
 
 #search-input, 
 #version-menu-input ~ label
@@ -89,6 +121,10 @@ nav.breadcrumbs ol li:last-child:after
 #version-menu-input ~ label
 {
     padding-left: 1rem;
+}
+#version-menu-input ~ label > span 
+{
+    display: inline-block;
 }
 #version-menu-input ~ label .package
 {
@@ -110,18 +146,9 @@ nav.breadcrumbs ol li:last-child:after
 #version-menu-input:checked ~ label::after 
 {
     content: '\25B2';
-     bottom: 0.15rem;
+    bottom: 0.15rem;
 }
 
-#search-results,
-#version-menu-input ~ ol
-{
-    margin: 0;
-    height: 0;
-    list-style-type: none;
-    position: relative;
-    top: 0.75rem;
-}
 
 #version-menu-input 
 {
@@ -244,8 +271,6 @@ nav.breadcrumbs ol li:last-child:after
 }
 
 
-*/
-
 #search-results
 {
     padding: 0;
@@ -267,21 +292,56 @@ nav.breadcrumbs ol li:last-child:after
     }
 }
 
+
+
+*/
 #search-results li a
 {
-    margin: 0.25rem 0;
-    display: inline-block;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    word-wrap: anywhere;
     padding: 0.5rem 1rem;
     background-color: #101010;
-    border-radius: 0.5rem;
-    box-shadow: 0 0.3rem 0 #080808;
+    
+    color: rgb(240, 81, 66);
 }
+#search-results li:first-child a 
+{
+    border-top-left-radius: 0.75rem;
+    border-top-right-radius: 0.75rem;
+}
+#search-results li:last-child a 
+{
+    border-bottom-left-radius: 0.75rem;
+    border-bottom-right-radius: 0.75rem;
+    box-shadow: 0 0.25rem 0 #080808;
+}
+
+#search-results li a > *:first-child 
+{
+    font-weight: 700;
+}
+#search-results li a > *:last-child 
+{
+    color: #666;
+    flex-shrink: 0;
+}
+
+
 #search-results li a:hover,
 #search-results li a:focus, 
 #search-results li.selected a
 {
-    color: #101010;
     background-color: rgb(240, 81, 66);
-    box-shadow: 0 0.3rem 0 rgb(180, 40, 30);
+    box-shadow: 0 0.25rem 0 rgb(180, 40, 30);
     text-decoration: none;
 }
+
+#search-results li a:hover *,
+#search-results li a:focus *, 
+#search-results li.selected a * 
+{
+    color: #101010;
+}
+

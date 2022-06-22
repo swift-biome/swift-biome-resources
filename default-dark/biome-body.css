@@ -74,12 +74,6 @@ nav li.github-icon-container .github-icon
     background-image: url('/github-icon.svg');
 } */
 
-nav ol.breadcrumbs-container,
-div.upper-container, 
-div.lower-container 
-{
-    padding: 0 1.5rem;
-}
 div.upper 
 {
     padding: 6rem 0 2rem;
@@ -276,11 +270,7 @@ body section.topics .topic-container-left
     {
         font-size: 2.25rem;
     }
-    body section.introduction ul.relationships-list p, 
-    body section.introduction ul.availability-list p 
-    {
-        font-size: inherit;
-    }
+
     body section.topics .topic-container 
     {
         display: flex;
