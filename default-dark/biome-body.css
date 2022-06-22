@@ -36,7 +36,7 @@ a.signature
 nav.breadcrumbs ol li:last-child, 
 header form ol li a,
 header .versions,
-.nationality a,
+.eyebrows a,
 .availability-list,
 a.signature .syntax-parameter-label, 
 a.signature .syntax-identifier,
@@ -89,13 +89,13 @@ div.lower
     padding-top: 1rem;
     
 }
-body section.introduction 
+section.introduction 
 {
     margin-top: 4rem;
     padding: 0 0 1rem;
     border-bottom: 2px solid rgb(240, 81, 66);
 }
-body section.introduction div.eyebrows 
+.eyebrows 
 {
     display: flex;
     flex-direction: row;
@@ -104,40 +104,36 @@ body section.introduction div.eyebrows
     font-style: italic;
 }
 
-body section.introduction span.nationality span.namespace:after,
-body section.introduction span.nationality span.base:before,
-body section.introduction span.nationality span.base:after 
+.eyebrows .namespace:after,
+.eyebrows .base:before,
+.eyebrows .base:after 
 {
     padding: 0 0.25rem;
 }
-body section.introduction span.nationality span.namespace:after 
+.eyebrows .namespace:after 
 {
     content: '/';
 }
-body section.introduction span.nationality span.base:before 
+.eyebrows .base:before 
 {
     content: '(';
 }
-body section.introduction span.nationality span.base:after 
+.eyebrows .base:after 
 {
     content: ')';
 }
-body section.introduction ul.relationships-list,
-body div.lower p
-{
-    font-size: 0.9rem;
-}
-body section.introduction ul.relationships-list
+
+ul.notes
 {
     padding-left: 0;
     color: #999;
     list-style-type: none;
 }
-body section.introduction ul.relationships-list li
+ul.notes li
 {
     margin: 0.25rem 0;
 }
-body section.introduction ul.relationships-list li p
+ul.notes li p
 {
     margin: 0;
 }

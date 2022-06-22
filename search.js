@@ -23,12 +23,23 @@ function reinitialize() {
     unloaded = false;
     
     var requests = [];
-    for (const package of includedPackages) {
-        requests.push(fetch('/reference/' + package + '/search.json').then((response) => response.json()));
+    for (const uri of searchIndices) {
+        requests.push(fetch(uri).then((response) => response.json()));
     }
     
     Promise.all(requests).then(function(json) {
-        const symbols = json.flat(1);
+        var symbols = [];
+        for (const group of json.flat(1)) {
+            const module = group.module;
+            for (const symbol of group.symbols) {
+                symbols.push({
+                    module: module,
+                    signature: symbol.s,
+                    display: symbol.t,
+                    uri: symbol.u
+                });
+            }
+        }
         search = {
             symbols: symbols, 
             index: lunr(function() {
@@ -40,7 +51,7 @@ function reinitialize() {
                 this.searchPipeline.remove(lunr.stemmer);
                 
                 for (let i = 0; i < symbols.length; i++) {
-                    this.add({i: i, text: symbols[i].text});
+                    this.add({i: i, text: symbols[i].signature});
                 }
             })
         };
@@ -81,9 +92,13 @@ function suggest(event) {
         
         const item      = document.createElement("li");
         const anchor    = document.createElement("a");
+        const module    = document.createElement("span");
+        
+        module.appendChild(document.createTextNode(symbol.module));
+        anchor.appendChild(document.createTextNode(symbol.display));
+        anchor.appendChild(module);
         anchor.setAttribute("href", symbol.uri);
-        const text      = document.createTextNode(symbol.title);
-        anchor.appendChild(text);
+        
         item.appendChild(anchor);
         output.appendChild(item);
     }
