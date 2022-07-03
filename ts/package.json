@@ -6,6 +6,7 @@
     "webpack-cli": "^4.10.0"
   },
   "dependencies": {
+    "@types/lunr": "^2.3.4",
     "lunr": "^2.3.9"
   }
 }
