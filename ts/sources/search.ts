@@ -1,3 +1,7 @@
+import * as lunr from "lunr"
+
+declare const searchIndices:string[];
+
 const searchbar = document.getElementById('search');
 const input     = document.getElementById('search-input');
 const output    = document.getElementById('search-results');
@@ -29,15 +33,17 @@ function reinitialize() {
     
     Promise.all(requests).then(function(json) {
         var symbols = [];
-        for (const group of json.flat(1)) {
-            const module = group.module;
-            for (const symbol of group.symbols) {
-                symbols.push({
-                    module: module,
-                    signature: symbol.s,
-                    display: symbol.t,
-                    uri: symbol.u
-                });
+        for (const nation of json) {
+            for (const culture of nation) {
+                const module = culture.module;
+                for (const symbol of culture.symbols) {
+                    symbols.push({
+                        module: module,
+                        signature: symbol.s,
+                        display: symbol.t,
+                        uri: symbol.u
+                    });
+                }
             }
         }
         search = {
