@@ -86,8 +86,9 @@ class SearchIndex {
     }
 }
 
-class SearchTool {
-    output:HTMLElement;
+class Toolbar {
+    search:HTMLElement;
+    versions:HTMLElement;
     
     index?:SearchIndex;
     loading:boolean;
@@ -95,9 +96,32 @@ class SearchTool {
     pending?:Event;
     results?:SearchResults;
     
-    constructor(output:HTMLElement) {
-        this.output = output;
+    constructor(output:{search:HTMLElement, versions:HTMLElement}) {
         this.loading = false;
+        this.search = output.search;
+        this.versions = output.versions;
+    }
+
+    toggleVersionMenu(event:Event) {
+        const input:HTMLInputElement = event.target as HTMLInputElement;
+        if (input.checked) {
+            this.expandVersionMenu();
+        } else {
+            this.collapseVersionMenu();
+        }
+    }
+    expandVersionMenu() {
+        this.versions.classList.add('expanded')
+        this.search.classList.add('occluded');
+    }
+    collapseVersionMenu() {
+        this.versions.classList.remove('expanded')
+    }
+    
+    async focusSearch() {
+        this.collapseVersionMenu();
+        this.search.classList.remove('occluded');
+        await this.reinitialize();
     }
     
     async reinitialize() {
@@ -150,6 +174,7 @@ class SearchTool {
         const input:HTMLInputElement = event.target as HTMLInputElement;
         this.results = this.index.search(input.value.toLowerCase());
         if (this.results === undefined) {
+            this.search.replaceChildren();
             return;
         }
         
@@ -172,8 +197,8 @@ class SearchTool {
             item.appendChild(anchor);
             items.push(item);
         }
-        this.output.replaceChildren(...items);
-        this.results.highlight(this.output);
+        this.search.replaceChildren(...items);
+        this.results.highlight(this.search);
     }
     
     navigate(event:KeyboardEvent) {
@@ -183,14 +208,14 @@ class SearchTool {
         switch (event.key) {
             case 'ArrowUp': {
                 if (this.results.index > 0) {
-                    this.results.rehighlight(this.output, this.results.index - 1);
+                    this.results.rehighlight(this.search, this.results.index - 1);
                     event.preventDefault();
                 }
                 break;
             }
             case 'ArrowDown': {
                 if (this.results.index < this.results.choices.length - 1) {
-                    this.results.rehighlight(this.output, this.results.index + 1);
+                    this.results.rehighlight(this.search, this.results.index + 1);
                     event.preventDefault();
                 }
                 break;
@@ -210,19 +235,36 @@ class SearchTool {
     }
 }
 
-const input:HTMLElement | null = document.getElementById('search-input');
-const output:HTMLElement | null = document.getElementById('search-results');
-const search:HTMLElement | null = document.getElementById('search');
+const search:HTMLElement = document.getElementById('search') as HTMLElement;
+const searchOutput:HTMLElement = document.getElementById('search-results') as HTMLElement;
+const searchInput:HTMLInputElement = document.getElementById('search-input') as HTMLInputElement;
 
-if (input !== null && 
-    output !== null && 
-    search !== null) {
-    
-    const tool = new SearchTool(output);
-    
-    input.addEventListener('focus', () => tool.reinitialize()); 
-    input.addEventListener('input', (event:Event) => tool.suggest(event)); 
-    input.addEventListener('keydown', (event:KeyboardEvent) => tool.navigate(event)); 
-    
-    search.addEventListener('submit', (event:Event) => tool.follow(event)); 
-}
+const version:HTMLElement = document.getElementById('version') as HTMLElement;
+const versionMenu:HTMLElement = document.getElementById('version-menu') as HTMLElement;
+const versionMenuToggle:HTMLInputElement = document.getElementById('version-menu-toggle') as HTMLInputElement;
+
+const toolbar = new Toolbar({search: searchOutput, versions: versionMenu});
+
+// prevents clicking on the label from defocusing the search input
+version.addEventListener('mousedown', function(event:Event) {
+        event.preventDefault();
+    }); 
+// defocuses the search input once the menu is actually toggled (on mouseup)
+versionMenuToggle.addEventListener('change', function(event:Event) {
+        searchInput.blur();
+        //versionMenuToggle.focus();
+        toolbar.toggleVersionMenu(event);
+    }); 
+
+searchInput.addEventListener('focus', function() {
+        // does not invoke 'change' handler, so it doesn’t immediately defocus
+        versionMenuToggle.checked = false;
+        toolbar.focusSearch();
+    }); 
+searchInput.addEventListener('input', 
+    (event:Event)           => toolbar.suggest(event)); 
+searchInput.addEventListener('keydown', 
+    (event:KeyboardEvent)   => toolbar.navigate(event)); 
+
+search.addEventListener('submit', 
+    (event:Event)           => toolbar.follow(event)); 

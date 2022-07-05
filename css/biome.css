@@ -47,29 +47,127 @@
   font-style: italic;
   src: url("/code-77.woff2") format("woff2"), url("/code-77.otf") format("opentype");
 }
+code {
+  font-family: "SFMono-Regular", "SF Mono", "Swiftinit Code";
+  white-space: pre-wrap;
+  hyphens: none;
+  font-size: 93.75%;
+}
+
+code.swift {
+  color: rgb(140, 140, 140);
+}
+code.swift .syntax-identifier,
+code.swift .syntax-parameter-label {
+  color: rgb(200, 200, 200);
+}
+code.swift .syntax-pseudo-identifier {
+  color: rgb(253, 39, 99);
+}
+code.swift .syntax-interpolation-anchor {
+  color: rgb(255, 86, 158);
+}
+code.swift .syntax-keyword {
+  color: rgb(240, 81, 66);
+}
+code.swift .syntax-type,
+code.swift .syntax-generic {
+  color: rgb(255, 157, 32);
+}
+code.swift .syntax-literal {
+  color: rgb(169, 138, 255);
+}
+
+p code {
+  background-color: #222;
+  padding: 0.2rem 0.5rem 0.25rem;
+  line-height: 0;
+  border-radius: 0.4rem;
+}
+
+pre {
+  margin: 2rem 0 2rem;
+  line-height: 1.5rem;
+  font-size: 1rem;
+}
+
+pre.notebook code {
+  counter-set: line -1;
+}
+pre.notebook code .syntax-newline {
+  counter-increment: line;
+}
+pre.notebook code .syntax-newline:after {
+  position: relative;
+  display: inline-block;
+  content: counter(line);
+  width: 0;
+  right: 2rem;
+  color: rgb(68, 68, 68);
+  direction: rtl;
+  word-wrap: normal;
+}
+
+@font-face {
+  font-family: "Swiftinit Text";
+  font-weight: 400;
+  font-style: normal;
+  src: url("/text-45.woff2") format("woff2"), url("/text-45.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Swiftinit Text";
+  font-weight: 400;
+  font-style: italic;
+  src: url("/text-47.woff2") format("woff2"), url("/text-47.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Swiftinit Text";
+  font-weight: 700;
+  font-style: normal;
+  src: url("/text-65.woff2") format("woff2"), url("/text-65.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Swiftinit Text";
+  font-weight: 700;
+  font-style: italic;
+  src: url("/text-67.woff2") format("woff2"), url("/text-67.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Swiftinit Code";
+  font-weight: 400;
+  font-style: normal;
+  src: url("/code-45.woff2") format("woff2"), url("/code-45.otf") format("opentype");
+}
+@font-face {
+  font-family: "Swiftinit Code";
+  font-weight: 400;
+  font-style: italic;
+  src: url("/code-47.woff2") format("woff2"), url("/code-47.otf") format("opentype");
+}
+@font-face {
+  font-family: "Swiftinit Code";
+  font-weight: 700;
+  font-style: normal;
+  src: url("/code-75.woff2") format("woff2"), url("/code-75.otf") format("opentype");
+}
+@font-face {
+  font-family: "Swiftinit Code";
+  font-weight: 700;
+  font-style: italic;
+  src: url("/code-77.woff2") format("woff2"), url("/code-77.otf") format("opentype");
+}
 html {
   font-size: 1rem;
 }
 
 body {
-  background-color: rgb(20, 20, 20);
+  background-color: rgb(22, 22, 22);
   font-family: "Swiftinit Text";
   overflow-wrap: break-word;
   color: rgb(200, 200, 200);
   padding-bottom: 20rem;
   -webkit-text-size-adjust: none;
   text-size-adjust: none;
-}
-
-h1, h2, h3 {
-  font-weight: normal;
-}
-
-code {
-  font-family: "SFMono-Regular", "SF Mono", "Swiftinit Code";
-  white-space: pre-wrap;
-  hyphens: none;
-  font-size: 93.75%;
 }
 
 a {
@@ -81,94 +179,8 @@ a:hover, a:focus {
   text-underline-offset: 0.35em;
 }
 
-/* colors */
-code.swift {
-  /* gray (background) */
-  color: rgb(140, 140, 140);
-}
-
-code.swift .syntax-identifier,
-code.swift .syntax-parameter-label {
-  /* off-white */
-  color: rgb(200, 200, 200);
-}
-
-a,
-code.swift .syntax-type,
-code.swift .syntax-generic {
-  /* yellow */
+a {
   color: rgb(255, 157, 32);
-}
-
-code.swift .syntax-pseudo-identifier {
-  /* orange */
-  color: rgb(253, 39, 99);
-}
-
-code.swift .syntax-keyword {
-  /* red */
-  color: rgb(240, 81, 66);
-}
-
-code.swift .syntax-interpolation-anchor {
-  /* pink */
-  color: rgb(255, 86, 158);
-}
-
-code.swift .syntax-literal {
-  /* lavender */
-  color: rgb(169, 138, 255);
-}
-
-/* code blocks */
-article pre {
-  line-height: 1.5rem;
-  font-size: 1rem;
-}
-
-article pre.notebook {
-  counter-set: line -1;
-}
-
-article pre.notebook .syntax-newline {
-  counter-increment: line;
-}
-
-article pre.notebook code .syntax-newline:after {
-  position: relative;
-  display: inline-block;
-  content: counter(line);
-  width: 0;
-  right: 2rem;
-  color: #444;
-  direction: rtl;
-  word-wrap: normal;
-}
-
-/* code spans */
-code:before, code:after {
-  font-family: "Swiftinit Text";
-}
-
-code:before {
-  content: " ";
-}
-
-code:after {
-  content: " ";
-}
-
-pre code:before, article p code:before,
-pre code:after, article p code:after {
-  content: none;
-}
-
-/* code wells */
-article p code {
-  background-color: #222;
-  padding: 0.2rem 0.5rem 0.25rem;
-  line-height: 0;
-  border-radius: 0.4rem;
 }
 
 article p {
@@ -176,18 +188,6 @@ article p {
   hyphens: auto;
 }
 
-@media only screen and (min-width: 50rem) {
-  article p {
-    line-height: 1.9rem;
-    font-size: 1.1rem;
-  }
-  article p code {
-    font-size: 0.96rem;
-  }
-  article aside p {
-    font-size: inherit;
-  }
-}
 /* asides */
 article aside h3 {
   font-size: inherit;
@@ -222,32 +222,18 @@ article aside.important {
   box-shadow: 0 0.25rem 0 rgba(255, 70, 50, 0.4), 0 0 2rem inset rgba(255, 20, 0, 0.1);
 }
 
-nav.breadcrumbs ol,
-div.toolbar-container,
-div.upper-container,
-div.lower-container {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 48rem;
-  position: relative;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-}
-
-header {
-  width: 100%;
-  position: fixed;
-  z-index: 1;
-}
-
 nav.breadcrumbs {
   background-color: #101010;
   border-bottom: 0.3rem #080808 solid;
   font-size: 0.9rem;
   padding: 0.5em 0;
 }
-
 nav.breadcrumbs ol {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 48rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
   margin-top: 0;
   margin-bottom: 0;
   padding-top: 0;
@@ -258,98 +244,155 @@ nav.breadcrumbs ol {
   flex-direction: row;
   flex-wrap: wrap;
 }
-
 nav.breadcrumbs ol li {
   display: inline-block;
   margin-right: 0.15em;
   min-width: 0;
   vertical-align: middle;
-  color: #aaaaaa;
+  color: rgb(170, 170, 170);
 }
-
 nav.breadcrumbs ol li a {
   color: inherit;
 }
-
+nav.breadcrumbs ol li:last-child {
+  color: rgb(240, 81, 66);
+}
 nav.breadcrumbs ol li:after {
   margin-left: 0.15em;
   content: ".";
-  color: #666666;
+  color: rgb(110, 110, 110);
 }
-
 nav.breadcrumbs ol li:last-child:after {
   content: "";
 }
 
-.toolbar-container {
-  margin-top: 1rem;
-  font-size: 0.9rem;
+@font-face {
+  font-family: "Swiftinit Text";
+  font-weight: 400;
+  font-style: normal;
+  src: url("/text-45.woff2") format("woff2"), url("/text-45.ttf") format("truetype");
 }
-
-.toolbar-container > * {
-  max-width: 32rem;
+@font-face {
+  font-family: "Swiftinit Text";
+  font-weight: 400;
+  font-style: italic;
+  src: url("/text-47.woff2") format("woff2"), url("/text-47.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Swiftinit Text";
+  font-weight: 700;
+  font-style: normal;
+  src: url("/text-65.woff2") format("woff2"), url("/text-65.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Swiftinit Text";
+  font-weight: 700;
+  font-style: italic;
+  src: url("/text-67.woff2") format("woff2"), url("/text-67.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Swiftinit Code";
+  font-weight: 400;
+  font-style: normal;
+  src: url("/code-45.woff2") format("woff2"), url("/code-45.otf") format("opentype");
+}
+@font-face {
+  font-family: "Swiftinit Code";
+  font-weight: 400;
+  font-style: italic;
+  src: url("/code-47.woff2") format("woff2"), url("/code-47.otf") format("opentype");
+}
+@font-face {
+  font-family: "Swiftinit Code";
+  font-weight: 700;
+  font-style: normal;
+  src: url("/code-75.woff2") format("woff2"), url("/code-75.otf") format("opentype");
+}
+@font-face {
+  font-family: "Swiftinit Code";
+  font-weight: 700;
+  font-style: italic;
+  src: url("/code-77.woff2") format("woff2"), url("/code-77.otf") format("opentype");
+}
+div.upper-container,
+div.lower-container {
   margin-left: auto;
   margin-right: auto;
+  max-width: 48rem;
+  position: relative;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 
-.toolbar {
+.toolbar-container {
+  margin-top: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+@media (pointer: fine) {
+  .toolbar-container {
+    font-size: 0.9rem;
+  }
+}
+.toolbar-container > * {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 32rem;
+}
+.toolbar-container .toolbar {
   display: flex;
   flex-direction: row;
   align-items: stretch;
 }
-
-.toolbar > * {
-  background-color: #101010;
-  box-shadow: 0 0.25rem 0 #080808;
-}
-
-.toolbar > *:first-child {
+.toolbar-container .toolbar > *:first-child {
   flex-grow: 1;
   border-top-left-radius: 0.75rem;
   border-bottom-left-radius: 0.75rem;
 }
-
-.toolbar > *:last-child {
+.toolbar-container .toolbar > * {
+  background-color: rgb(16, 16, 16);
+  box-shadow: 0 0.25rem 0 rgb(8, 8, 8);
+}
+.toolbar-container .toolbar > *:last-child {
   flex-shrink: 0;
   border-top-right-radius: 0.75rem;
   border-bottom-right-radius: 0.75rem;
 }
-
-#search-results,
-#version-menu-input ~ ol {
-  margin-top: 0;
-  margin-bottom: 0;
-  padding: 0;
-  height: 0;
-  list-style-type: none;
-  position: relative;
-  top: 0.75rem;
+.toolbar-container .toolbar #search-input {
+  width: 100%;
+  border-radius: 0;
+  border: none;
+  outline: none;
+  background: none;
+  color: rgb(200, 200, 200);
+  font-family: "SFMono-Regular", "SF Mono", "Swiftinit Code";
+  font-size: 100%;
 }
-
-#search-input,
-#version-menu-input ~ label {
+.toolbar-container .toolbar #search-input,
+.toolbar-container .toolbar #version {
   padding: 0.8rem 1.5rem;
   display: inline-block;
   vertical-align: middle;
 }
-
-#version-menu-input ~ label {
+.toolbar-container .toolbar #version {
+  -webkit-tap-highlight-color: transparent;
   padding-left: 1rem;
 }
-
-#version-menu-input ~ label > span {
+.toolbar-container .toolbar #version > span {
   display: inline-block;
 }
-
-#version-menu-input ~ label .package {
+.toolbar-container .toolbar #version > span.package {
   font-style: italic;
 }
-
-#version-menu-input ~ label .version {
+@media only screen and (max-width: 32rem) {
+  .toolbar-container .toolbar #version > span.package {
+    display: none;
+  }
+}
+.toolbar-container .toolbar #version > span.version {
   padding-left: 0.75em;
 }
-
-#version-menu-input ~ label::after {
+.toolbar-container .toolbar #version:after {
   content: "▼";
   margin-left: 0.8rem;
   font-size: 0.8rem;
@@ -357,240 +400,309 @@ nav.breadcrumbs ol li:last-child:after {
   bottom: 0.1rem;
   opacity: 0.5;
 }
-
-#version-menu-input:checked ~ label::after {
+.toolbar-container .toolbar #version-menu-toggle:checked ~ #version:after {
   content: "▲";
   bottom: 0.15rem;
 }
-
-#version-menu-input {
+.toolbar-container .toolbar #version-menu-toggle {
   display: none;
-}
-
-#version-menu-input ~ ol {
-  display: none;
-}
-
-#version-menu-input:checked ~ ol {
-  display: block;
-}
-
-#version-menu-input ~ label .version,
-#version-menu-input ~ ol li {
-  font-weight: 700;
-  font-size: 88%;
-}
-
-#version-menu-input ~ ol li {
-  text-align: right;
-  padding: 0.2rem 2.8rem 0.2rem 1rem;
-  background-color: #101010;
-}
-
-#version-menu-input ~ ol li a {
-  color: #aaa;
-}
-
-#version-menu-input ~ ol li:first-child {
-  border-top-left-radius: 1rem;
-  border-top-right-radius: 1rem;
-}
-
-#version-menu-input ~ ol li:last-child {
-  border-bottom-left-radius: 1rem;
-  border-bottom-right-radius: 1rem;
-}
-
-#search-input {
-  position: relative;
-  width: 100%;
-  border-radius: 0;
-  border: none;
-  outline: none;
-  font-size: 100%;
-  background: none;
-  color: #ccc;
-}
-
-/* search bar */
-/*
-#search 
-{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-#search  div.input-container 
-{
-    display: flex;
-    flex-direction: row;
-}
-
-#search div.input-container div.bevel 
-{
-    position: relative;
-    height: 3.6rem;
-    width: 0;
-}
-#search div.input-container div.bevel:first-child 
-{
-    direction: rtl;
-}
-#search div.input-container div.rectangle
-{
-    background: #080808;
-}
-#search div.input-container div.bevel:last-child 
-{
-    direction: ltr;
-}
-#search div.input-container div.bevel:before, 
-#search div.input-container div.bevel:after
-{
-    position: absolute;
-    display: block;
-    border-style: solid;
-    border-width: 1.8rem 10px;
-    content: '';
-}
-#search div.input-container div.bevel:first-child:after 
-{
-    border-color: #101010 #101010 transparent transparent;
-
-}
-#search div.input-container div.bevel:first-child:before 
-{
-    border-color: #080808 #080808 transparent transparent;
-}
-#search div.input-container div.bevel:last-child:after 
-{
-    border-color: #101010 transparent transparent #101010;
-
-}
-#search div.input-container div.bevel:last-child:before 
-{
-    border-color: #080808 transparent transparent #080808;
-}
-#search div.input-container div.bevel:after,
-#search-input
-{
-    top: -0.3rem;
-}
-
-
-#search-results
-{
-    padding: 0;
-}
-
-
-
-
-
-*/
-#search #search-results li {
-  display: block;
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .toolbar-container #search-results li {
+  .toolbar-container #search-results {
     display: none;
   }
-  .toolbar-container:focus-within #search-results li {
-    display: block;
+  .toolbar-container:focus-within #search-results:not(.occluded) {
+    display: inherit;
   }
 }
-#search-results li a {
-  margin: 0;
-  display: flex;
-  justify-content: space-between;
-  word-wrap: anywhere;
-  padding: 0.5rem 1rem;
-  background-color: #101010;
-  color: rgb(240, 81, 66);
+#search-results.occluded,
+#version-menu {
+  display: none;
 }
 
-#search-results li:first-child a {
+#version-menu.expanded {
+  display: inherit;
+}
+
+#search-results,
+#version-menu {
+  margin-top: 0.6rem;
+  padding: 0;
+  height: 0;
+}
+
+#search-results,
+#version-menu ol {
+  list-style-type: none;
+  display: flex;
+  flex-flow: column nowrap;
+  font-size: 0.9rem;
+}
+#search-results li,
+#version-menu ol li {
+  background-color: rgb(16, 16, 16);
+  box-shadow: 0 0.25rem 0 rgb(8, 8, 8);
+}
+#search-results li a,
+#version-menu ol li a {
+  color: rgb(240, 81, 66);
+}
+#search-results li > *,
+#version-menu ol li > * {
+  margin: 0;
+  word-wrap: anywhere;
+  padding: 0.5rem 1rem;
+}
+#search-results li:first-child,
+#version-menu ol li:first-child {
   border-top-left-radius: 0.75rem;
   border-top-right-radius: 0.75rem;
 }
-
-#search-results li:last-child a {
+#search-results li:last-child,
+#version-menu ol li:last-child {
   border-bottom-left-radius: 0.75rem;
   border-bottom-right-radius: 0.75rem;
-  box-shadow: 0 0.25rem 0 #080808;
+}
+#search-results li:hover,
+#search-results li:focus,
+#search-results li.selected,
+#version-menu ol li:hover,
+#version-menu ol li:focus,
+#version-menu ol li.selected {
+  background-color: rgb(240, 81, 66);
+  box-shadow: 0 0.25rem 0 rgb(180, 40, 30);
+}
+#search-results li:hover a,
+#search-results li:focus a,
+#search-results li.selected a,
+#version-menu ol li:hover a,
+#version-menu ol li:focus a,
+#version-menu ol li.selected a {
+  text-decoration: none;
+  color: rgb(16, 16, 16);
+}
+#search-results li.current,
+#version-menu ol li.current {
+  color: rgb(16, 16, 16);
+  background-color: rgb(255, 157, 32);
+  box-shadow: 0 0.25rem 0 rgb(180, 100, 0);
 }
 
+#search-results li > * {
+  display: flex;
+  justify-content: space-between;
+}
 #search-results li a > *:first-child {
   font-weight: 700;
 }
-
 #search-results li a > *:last-child {
-  color: #666;
+  color: rgb(110, 110, 110);
   flex-shrink: 0;
 }
-
-#search-results li a:hover,
-#search-results li a:focus,
-#search-results li.selected a {
-  background-color: rgb(240, 81, 66);
-  box-shadow: 0 0.25rem 0 rgb(180, 40, 30);
-  text-decoration: none;
+#search-results li:hover a > *:last-child,
+#search-results li:focus a > *:last-child,
+#search-results li.selected a > *:last-child {
+  color: inherit;
 }
 
-#search-results li a:hover *,
-#search-results li a:focus *,
-#search-results li.selected a * {
-  color: #101010;
+#version-menu ol {
+  font-weight: 700;
+  align-items: flex-end;
+}
+#version-menu ol li {
+  margin: 0;
+  white-space: pre-wrap;
+}
+#version-menu ol li > * {
+  display: inline-block;
+  float: left;
+}
+#version-menu ol li > *:after {
+  padding: 0 0.5rem 0 0.75rem;
+  content: "*";
+  visibility: hidden;
+}
+#version-menu ol li.current > *:last-child:after {
+  visibility: visible;
+}
+@font-face {
+  font-family: "Swiftinit Text";
+  font-weight: 400;
+  font-style: normal;
+  src: url("/text-45.woff2") format("woff2"), url("/text-45.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Swiftinit Text";
+  font-weight: 400;
+  font-style: italic;
+  src: url("/text-47.woff2") format("woff2"), url("/text-47.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Swiftinit Text";
+  font-weight: 700;
+  font-style: normal;
+  src: url("/text-65.woff2") format("woff2"), url("/text-65.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Swiftinit Text";
+  font-weight: 700;
+  font-style: italic;
+  src: url("/text-67.woff2") format("woff2"), url("/text-67.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Swiftinit Code";
+  font-weight: 400;
+  font-style: normal;
+  src: url("/code-45.woff2") format("woff2"), url("/code-45.otf") format("opentype");
+}
+@font-face {
+  font-family: "Swiftinit Code";
+  font-weight: 400;
+  font-style: italic;
+  src: url("/code-47.woff2") format("woff2"), url("/code-47.otf") format("opentype");
+}
+@font-face {
+  font-family: "Swiftinit Code";
+  font-weight: 700;
+  font-style: normal;
+  src: url("/code-75.woff2") format("woff2"), url("/code-75.otf") format("opentype");
+}
+@font-face {
+  font-family: "Swiftinit Code";
+  font-weight: 700;
+  font-style: italic;
+  src: url("/code-77.woff2") format("woff2"), url("/code-77.otf") format("opentype");
+}
+div.upper {
+  padding: 6rem 0 2rem;
 }
 
-h1 {
-  font-size: 2rem;
-}
-
-h2 {
-  font-size: 1.6rem;
-}
-
-h3 {
-  font-size: 1.4rem;
-}
-
-h4, h5, h6 {
-  font-size: 1.25rem;
-}
-
-header,
-#search-input,
-h1,
-body section.parameters dl dt,
-body div.upper aside h2,
-body section.platforms ul {
+div.upper article h1, div.upper article h2, div.upper article h3, div.upper article h4 {
   font-family: "SFMono-Regular", "SF Mono", "Swiftinit Code";
 }
-
-/* colors */
-.eyebrows,
-a.signature {
-  /* gray (background) */
-  color: rgb(140, 140, 140);
+div.upper article h2 {
+  margin: 2.5rem 0 1rem;
+  font-size: 1.5rem;
 }
-
-nav.breadcrumbs ol li:last-child,
-header form ol li a,
-header .versions,
-.eyebrows a,
-.availability-list,
-a.signature .syntax-parameter-label,
-a.signature .syntax-identifier,
-a.signature .syntax-keyword-identifier {
-  /* red */
+div.upper article h3 {
+  margin: 2rem 0 1rem;
+  font-size: 1.3rem;
+}
+div.upper article h4, div.upper article h5, div.upper article h6 {
+  margin: 2rem 0 1rem;
+  font-size: 1.2rem;
+}
+div.upper article section.introduction {
+  margin-top: 4rem;
+  padding: 0 0 1rem;
+  border-bottom: 2px solid rgb(240, 81, 66);
+}
+div.upper article section.introduction .eyebrows {
+  color: rgb(140, 140, 140);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-style: italic;
+}
+div.upper article section.introduction .eyebrows a {
   color: rgb(240, 81, 66);
 }
-
-/* layout */
-body {
+div.upper article section.introduction .eyebrows .namespace:after,
+div.upper article section.introduction .eyebrows .base:before,
+div.upper article section.introduction .eyebrows .base:after {
+  padding: 0 0.25rem;
+}
+div.upper article section.introduction .eyebrows .namespace:after {
+  content: "/";
+}
+div.upper article section.introduction .eyebrows .base:before {
+  content: "(";
+}
+div.upper article section.introduction .eyebrows .base:after {
+  content: ")";
+}
+div.upper article section.introduction h1 {
+  margin: 1rem 0;
+  font-size: 2rem;
+}
+div.upper article section.introduction ul.notes {
+  list-style-type: none;
+  padding-left: 0;
+  color: rgb(140, 140, 140);
+}
+div.upper article section.introduction ul.notes li {
+  margin: 0.25rem 0;
+}
+div.upper article section.introduction ul.notes li p {
   margin: 0;
+}
+div.upper article section.introduction ul.availability-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  color: rgb(240, 81, 66);
+}
+div.upper article section.introduction ul.availability-list li {
+  margin: 0;
+}
+div.upper article section.introduction ul.availability-list li p {
+  margin: 0;
+}
+div.upper article section.platforms ul {
+  margin: 1rem 0 0 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  font-family: "SFMono-Regular", "SF Mono", "Swiftinit Code";
+}
+div.upper article section.platforms ul li {
+  display: inline-block;
+  margin: 0;
+  padding: 0.1rem 0.5rem 0.1rem;
+  border-radius: 0.25rem;
+  background: rgb(240, 81, 66);
+  color: rgb(22, 22, 22);
+}
+div.upper article section.declaration pre {
+  text-indent: -2.5rem;
+  padding-left: 2.5rem;
+  margin: 2.5rem 0 2.5rem;
+}
+div.upper article section.declaration pre code {
+  font-size: inherit;
+}
+div.upper article section.parameters > *,
+div.upper article section.parameters > dl > dd,
+div.upper article section.returns > *,
+div.upper article section.returns > dl > dd {
+  margin-left: 3rem;
+}
+div.upper article section.parameters > h2,
+div.upper article section.parameters > dl,
+div.upper article section.returns > h2,
+div.upper article section.returns > dl {
+  margin-left: inherit;
+}
+div.upper article section.parameters dl {
+  counter-set: parameter-index -1;
+}
+div.upper article section.parameters dl dt {
+  counter-increment: parameter-index;
+  margin-top: 2rem;
+  font-family: "SFMono-Regular", "SF Mono", "Swiftinit Code";
+  font-weight: 700;
+}
+div.upper article section.parameters dl dt:before {
+  content: "$" counter(parameter-index);
+  display: inline-block;
+  min-width: 3rem;
+  color: #444;
+  font-weight: normal;
 }
 
 /* github icon */
@@ -613,254 +725,150 @@ nav li.github-icon-container .github-icon
     height: 1.25em;
     background-image: url('/github-icon.svg');
 } */
-div.upper {
-  padding: 6rem 0 2rem;
+@font-face {
+  font-family: "Swiftinit Text";
+  font-weight: 400;
+  font-style: normal;
+  src: url("/text-45.woff2") format("woff2"), url("/text-45.ttf") format("truetype");
 }
-
+@font-face {
+  font-family: "Swiftinit Text";
+  font-weight: 400;
+  font-style: italic;
+  src: url("/text-47.woff2") format("woff2"), url("/text-47.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Swiftinit Text";
+  font-weight: 700;
+  font-style: normal;
+  src: url("/text-65.woff2") format("woff2"), url("/text-65.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Swiftinit Text";
+  font-weight: 700;
+  font-style: italic;
+  src: url("/text-67.woff2") format("woff2"), url("/text-67.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Swiftinit Code";
+  font-weight: 400;
+  font-style: normal;
+  src: url("/code-45.woff2") format("woff2"), url("/code-45.otf") format("opentype");
+}
+@font-face {
+  font-family: "Swiftinit Code";
+  font-weight: 400;
+  font-style: italic;
+  src: url("/code-47.woff2") format("woff2"), url("/code-47.otf") format("opentype");
+}
+@font-face {
+  font-family: "Swiftinit Code";
+  font-weight: 700;
+  font-style: normal;
+  src: url("/code-75.woff2") format("woff2"), url("/code-75.otf") format("opentype");
+}
+@font-face {
+  font-family: "Swiftinit Code";
+  font-weight: 700;
+  font-style: italic;
+  src: url("/code-77.woff2") format("woff2"), url("/code-77.otf") format("opentype");
+}
 div.lower {
   padding-top: 1rem;
 }
-
-section.introduction {
-  margin-top: 4rem;
-  padding: 0 0 1rem;
-  border-bottom: 2px solid rgb(240, 81, 66);
-}
-
-.eyebrows {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+div.lower h2, div.lower h3, div.lower h4 {
   font-style: italic;
+  word-wrap: anywhere;
 }
-
-.eyebrows .namespace:after,
-.eyebrows .base:before,
-.eyebrows .base:after {
-  padding: 0 0.25rem;
-}
-
-.eyebrows .namespace:after {
-  content: "/";
-}
-
-.eyebrows .base:before {
-  content: "(";
-}
-
-.eyebrows .base:after {
-  content: ")";
-}
-
-ul.notes {
-  padding-left: 0;
-  color: #999;
-  list-style-type: none;
-}
-
-ul.notes li {
-  margin: 0.25rem 0;
-}
-
-ul.notes li p {
-  margin: 0;
-}
-
-body ul.availability-list {
-  padding: 0;
-  margin: 0;
-  list-style-type: none;
-}
-
-body ul.availability-list li {
-  margin: 0;
-}
-
-body ul.availability-list li p {
-  margin: 0;
-}
-
-body section.platforms ul {
-  margin: 1rem 0 0 0;
-  padding: 0;
-  list-style-type: none;
-  font-size: 0.8rem;
-  font-weight: 700;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
-body section.platforms ul li {
-  display: inline-block;
-  background: rgb(240, 81, 66);
-  color: rgb(20, 20, 20);
-  border-radius: 0.25rem;
-  padding: 0.1rem 0.5rem 0.1rem;
-  margin: 0;
-}
-
-body h1 {
-  margin: 1rem 0;
-}
-
-body h2,
-body h3,
-body h4 {
-  font-weight: 700;
-}
-
-body div.upper h2 {
-  margin: 2rem 0 1rem 0;
-}
-
-body div.upper h3,
-body div.upper h4,
-body div.upper h5,
-body div.upper h6 {
-  margin: 1rem 0;
-}
-
-body section.parameters dl {
-  counter-set: parameter-index -1;
-}
-
-body section.parameters dl dt {
-  font-weight: 700;
-  margin-top: 2rem;
-  counter-increment: parameter-index;
-}
-
-body section.parameters dl dt:before {
-  content: "$" counter(parameter-index);
-  display: inline-block;
-  min-width: 3rem;
-  color: #444;
-  font-weight: normal;
-}
-
-body section.parameters dl dd,
-body section.returns > * {
-  margin-left: 3rem;
-}
-
-body section.returns > h2 {
-  margin-left: inherit;
-}
-
-body section.declaration pre {
-  text-indent: -2.5rem;
-  padding-left: 2.5rem;
-  margin: 2.5rem 0 2.5rem;
-}
-
-body section.declaration pre code,
-body div.lower ul li a.signature code {
-  font-size: 100%;
-}
-
-body section.discussion pre {
-  margin: 2rem 0 2rem;
-}
-
-body div.lower ul li a.signature {
-  line-height: 1.5rem;
+div.lower a.signature {
   display: block;
   text-indent: -2.5rem;
+  line-height: 1.5rem;
+  color: rgb(140, 140, 140);
 }
-
-body div.lower h2 {
-  margin: 1rem 0;
+div.lower a.signature code {
+  font-size: inherit;
 }
-
-body div.lower h3 {
-  margin: 1rem 0;
+div.lower a.signature code .syntax-parameter-label,
+div.lower a.signature code .syntax-identifier,
+div.lower a.signature code .syntax-keyword-identifier {
+  color: rgb(240, 81, 66);
 }
-
-body section.topics h3 {
-  padding: 1.1rem 0;
-}
-
-body section.topics .topic-container,
-body div.lower section.relationships {
-  border-top: solid 1px #333;
-}
-
-body section.topics .topic-container-left {
-  font-style: italic;
-}
-
-@media only screen and (min-width: 50rem) {
-  div.upper {
-    padding-top: 4rem;
-  }
-  article h1 {
-    font-size: 2.25rem;
-  }
-  body section.topics .topic-container {
-    display: flex;
-    flex-direction: row;
-  }
-  body section.topics .topic-container-left {
-    flex: 0 0 10rem;
-    margin-right: 2rem;
-  }
-  body section.topics .topic-container-right {
-    min-width: 0;
-    margin-top: 1.5rem;
-  }
-}
-body div.lower ul {
+div.lower section.related ul,
+div.lower section.topics ul {
   padding: 0;
   list-style-type: none;
 }
-
-body div.lower h2 {
-  font-style: italic;
-}
-
-body div.lower section.relationships h2 {
-  padding: 0.5rem 0 0.5rem 0;
-}
-
-body div.lower section.topics h2 {
-  padding: 1rem 0 0 0;
-}
-
-body div.lower section.relationships ul li {
-  margin: 0 0 0 2.5rem;
-}
-
-body div.lower section.topics ul li {
-  margin-bottom: 1.5rem;
-}
-
-body div.lower ul li p {
+div.lower section.related ul li p,
+div.lower section.topics ul li p {
   margin: 0 0 1rem 2.5rem;
 }
-
-body div.lower section.related ul li a.signature {
+div.lower section.related {
+  border-top: solid 1px rgb(50, 50, 50);
+}
+div.lower section.related h2 {
+  margin: 1rem 0;
+  padding: 0.5rem 0 0.5rem 0;
+}
+div.lower section.related ul li {
+  margin: 0 0 0 2.5rem;
+}
+div.lower section.related ul li a.signature {
   padding: 0.25rem 0 0.25rem 2.5rem;
 }
-
-body div.lower section.topics ul li a.signature {
+div.lower section.topics h2 {
+  margin: 1rem 0;
+  padding: 1rem 0 0 0;
+}
+div.lower section.topics h3 {
+  margin: 0.35rem 0 0.5rem;
+  padding: 1.1rem 0 0;
+  font-size: 1.3rem;
+}
+div.lower section.topics h4 {
+  padding-top: 1rem;
+  border-top: dashed 1px rgb(50, 50, 50);
+  margin: 2rem 0 0;
+  font-size: 1.2rem;
+  font-weight: normal;
+}
+div.lower section.topics ul li {
+  margin-bottom: 1.5rem;
+}
+div.lower section.topics ul li a.signature {
   padding: 0.8em 0 0.8rem 2.5rem;
 }
-
-body div.lower ul li code.signature .syntax-parameter-label,
-body div.lower ul li code.signature .syntax-identifier,
-body div.lower ul li code.signature .syntax-keyword-identifier {
-  color: rgb(240, 81, 66);
+div.lower section.topics > section {
+  border-top: solid 1px rgb(50, 50, 50);
+}
+@media only screen and (min-width: 50rem) {
+  div.lower section.topics > section {
+    display: grid;
+    grid-template-columns: 8rem 1fr;
+    column-gap: 2rem;
+  }
+  div.lower section.topics > section h3 {
+    margin: 0.35rem 0 0.5rem;
+  }
+  div.lower section.topics > section h4 {
+    margin-top: 1rem;
+    padding-top: 1.6rem;
+  }
+  div.lower section.topics > section h4 ~ ul {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: dashed 1px rgb(50, 50, 50);
+  }
 }
 
-body div.lower section.topics ul.relationships-list li,
-body div.lower section.topics ul.availability-list li {
+body {
   margin: 0;
 }
-
-body div.lower section.topics ul.relationships-list li p,
-body div.lower section.relationships p.relationship {
-  color: #999;
+body header {
+  width: 100%;
+  z-index: 1;
+  position: fixed;
+  font-family: "SFMono-Regular", "SF Mono", "Swiftinit Code";
 }
 
 /*# sourceMappingURL=biome.css.map */
