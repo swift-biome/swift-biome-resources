@@ -1,0 +1,56 @@
+[
+    {
+        "catalog_tools_version": 2,
+        "modules": [
+            {
+                "dependencies": [],
+                "include": [
+                    "Swift"
+                ],
+                "module": "Swift"
+            },
+            {
+                "dependencies": [],
+                "include": [
+                    "_Concurrency"
+                ],
+                "module": "_Concurrency"
+            },
+            {
+                "dependencies": [],
+                "include": [
+                    "_Differentiation"
+                ],
+                "module": "_Differentiation"
+            },
+            {
+                "dependencies": [],
+                "include": [
+                    "_Distributed"
+                ],
+                "module": "_Distributed"
+            },
+            {
+                "dependencies": [],
+                "include": [
+                    "_StringProcessing"
+                ],
+                "module": "_StringProcessing"
+            }
+        ],
+        "package": "swift-standard-library"
+    },
+    {
+        "catalog_tools_version": 2,
+        "modules": [
+            {
+                "dependencies": [],
+                "include": [
+                    "Dispatch"
+                ],
+                "module": "Dispatch"
+            }
+        ],
+        "package": "swift-core-libraries"
+    }
+]

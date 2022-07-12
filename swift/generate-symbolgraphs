@@ -1,0 +1,102 @@
+#!/usr/bin/python3
+
+import os, subprocess, shutil, itertools, json
+
+class swift_release:
+    def __init__(self, string):
+        self.version = string
+    
+    def __str__(self): 
+        return '{0}-RELEASE'.format(self.version)
+
+class swift_nightly:
+    def __init__(self, string):
+        self.version = string
+    
+    def __str__(self): 
+        return 'DEVELOPMENT-SNAPSHOT-{0}-a'.format(self.version)
+
+standard_library_modules = (
+    'Swift', 
+    '_Concurrency', 
+    '_Differentiation', 
+    '_Distributed', 
+    'Distributed', 
+    'RegexBuilder', 
+    '_RegexParser', 
+    '_StringProcessing',
+)
+core_libraries_modules = (
+    'Dispatch', 
+)
+toolchains = (
+    swift_release('5.6'),
+    swift_release('5.6.1'),
+    swift_release('5.6.2'),
+    swift_nightly('2022-03-13'), 
+    swift_nightly('2022-04-04'), 
+    swift_nightly('2022-05-04'), 
+    swift_nightly('2022-05-18'), 
+    swift_nightly('2022-06-02'), 
+    swift_nightly('2022-06-20'), 
+)
+
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
+
+for toolchain in toolchains:
+    swift_symbolgraph_extract = os.path.join(os.environ['SWIFTENV_ROOT'], 
+        'versions', 
+        str(toolchain), 
+        'usr', 
+        'bin', 
+        'swift-symbolgraph-extract')
+    
+    os.makedirs(toolchain.version, exist_ok = True)
+    os.chdir(toolchain.version)
+    
+    generated = set()
+    for module in itertools.chain(standard_library_modules, core_libraries_modules):
+        if os.path.exists(module): 
+            generated.add(module) 
+            continue 
+        
+        os.makedirs(module)
+        output = subprocess.run((swift_symbolgraph_extract, 
+                '-skip-inherited-docs', 
+                '-target', 'x86_64-unknown-linux-gnu', 
+                '-output-dir', module, 
+                '-module-name', module), 
+            capture_output = True)
+        if output.returncode == 0:
+            print('generated documentation for module \'{1}\' ({0})'.format(toolchain, module))
+            generated.add(module)
+        else: 
+            shutil.rmtree(module)
+    
+    catalog = [
+        {
+            'catalog_tools_version': 2, 
+            'package': package,
+            'modules': 
+            [
+                {
+                    'dependencies': [], 
+                    'include': [module], 
+                    'module': module
+                } 
+                for module in modules if module in generated
+            ]
+        }
+        for package, modules in (
+            ('swift-standard-library', standard_library_modules),
+            ('swift-core-libraries', core_libraries_modules))
+    ]
+    with open('Package.catalog', 'w') as file:
+        file.write(json.dumps(catalog, indent = 4, sort_keys = True))
+
+    os.chdir('..')
+    
+with open('swift-versions', 'w') as file:
+    for toolchain in toolchains:
+        file.write(toolchain.version)
+        file.write('\n')
