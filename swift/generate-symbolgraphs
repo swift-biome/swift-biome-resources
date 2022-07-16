@@ -22,6 +22,7 @@ standard_library_modules = (
     '_Differentiation', 
     '_Distributed', 
     'Distributed', 
+    '_MatchingEngine', 
     'RegexBuilder', 
     '_RegexParser', 
     '_StringProcessing',

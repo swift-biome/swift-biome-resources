@@ -26,6 +26,13 @@
             {
                 "dependencies": [],
                 "include": [
+                    "_MatchingEngine"
+                ],
+                "module": "_MatchingEngine"
+            },
+            {
+                "dependencies": [],
+                "include": [
                     "_StringProcessing"
                 ],
                 "module": "_StringProcessing"
