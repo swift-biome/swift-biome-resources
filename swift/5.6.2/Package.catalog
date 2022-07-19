@@ -49,6 +49,13 @@
                     "Dispatch"
                 ],
                 "module": "Dispatch"
+            },
+            {
+                "dependencies": [],
+                "include": [
+                    "Foundation"
+                ],
+                "module": "Foundation"
             }
         ],
         "package": "swift-core-libraries"

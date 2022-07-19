@@ -29,6 +29,7 @@ standard_library_modules = (
 )
 core_libraries_modules = (
     'Dispatch', 
+    'Foundation',
 )
 toolchains = (
     swift_release('5.6'),
