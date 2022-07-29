@@ -3,49 +3,100 @@
         "catalog_tools_version": 2,
         "modules": [
             {
-                "dependencies": [],
+                "dependencies": [
+                    {
+                        "modules": [],
+                        "package": "swift-standard-library"
+                    }
+                ],
                 "include": [
                     "Swift"
                 ],
                 "module": "Swift"
             },
             {
-                "dependencies": [],
+                "dependencies": [
+                    {
+                        "modules": [
+                            "Swift"
+                        ],
+                        "package": "swift-standard-library"
+                    }
+                ],
                 "include": [
                     "_Concurrency"
                 ],
                 "module": "_Concurrency"
             },
             {
-                "dependencies": [],
+                "dependencies": [
+                    {
+                        "modules": [
+                            "Swift"
+                        ],
+                        "package": "swift-standard-library"
+                    }
+                ],
                 "include": [
                     "_Differentiation"
                 ],
                 "module": "_Differentiation"
             },
             {
-                "dependencies": [],
+                "dependencies": [
+                    {
+                        "modules": [
+                            "Swift",
+                            "_Concurrency"
+                        ],
+                        "package": "swift-standard-library"
+                    }
+                ],
                 "include": [
                     "Distributed"
                 ],
                 "module": "Distributed"
             },
             {
-                "dependencies": [],
+                "dependencies": [
+                    {
+                        "modules": [
+                            "Swift",
+                            "_RegexParser",
+                            "_StringProcessing"
+                        ],
+                        "package": "swift-standard-library"
+                    }
+                ],
                 "include": [
                     "RegexBuilder"
                 ],
                 "module": "RegexBuilder"
             },
             {
-                "dependencies": [],
+                "dependencies": [
+                    {
+                        "modules": [
+                            "Swift"
+                        ],
+                        "package": "swift-standard-library"
+                    }
+                ],
                 "include": [
                     "_RegexParser"
                 ],
                 "module": "_RegexParser"
             },
             {
-                "dependencies": [],
+                "dependencies": [
+                    {
+                        "modules": [
+                            "Swift",
+                            "_RegexParser"
+                        ],
+                        "package": "swift-standard-library"
+                    }
+                ],
                 "include": [
                     "_StringProcessing"
                 ],
@@ -58,14 +109,26 @@
         "catalog_tools_version": 2,
         "modules": [
             {
-                "dependencies": [],
+                "dependencies": [
+                    {
+                        "modules": [],
+                        "package": "swift-core-libraries"
+                    }
+                ],
                 "include": [
                     "Dispatch"
                 ],
                 "module": "Dispatch"
             },
             {
-                "dependencies": [],
+                "dependencies": [
+                    {
+                        "modules": [
+                            "Dispatch"
+                        ],
+                        "package": "swift-core-libraries"
+                    }
+                ],
                 "include": [
                     "Foundation"
                 ],

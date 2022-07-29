@@ -16,6 +16,19 @@ class swift_nightly:
     def __str__(self): 
         return 'DEVELOPMENT-SNAPSHOT-{0}-a'.format(self.version)
 
+# https://forums.swift.org/t/dependency-graph-of-the-standard-library-modules/59267
+dependency_edges = {
+    'Distributed': ['Swift', '_Concurrency'],
+    '_Distributed': ['Swift', '_Concurrency'],
+    '_Concurrency': ['Swift'],
+    '_Differentiation': ['Swift'],
+    '_MatchingEngine': ['Swift'],
+    '_RegexParser': ['Swift'],
+    '_StringProcessing': ['Swift', '_RegexParser', '_MatchingEngine'],
+    'RegexBuilder': ['Swift', '_RegexParser', '_StringProcessing', '_MatchingEngine'],
+
+    'Foundation': ['Dispatch'],
+}
 standard_library_modules = (
     'Swift', 
     '_Concurrency', 
@@ -82,7 +95,17 @@ for toolchain in toolchains:
             'modules': 
             [
                 {
-                    'dependencies': [], 
+                    'dependencies': 
+                    [
+                        {
+                            'package': package,
+                            'modules': 
+                            [
+                                module for module in dependency_edges.get(module, []) if 
+                                module in generated 
+                            ]
+                        }
+                    ], 
                     'include': [module], 
                     'module': module
                 } 
