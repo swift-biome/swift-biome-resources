@@ -54,6 +54,7 @@ toolchains = (
     swift_nightly('2022-05-18'), 
     swift_nightly('2022-06-02'), 
     swift_nightly('2022-06-20'), 
+    swift_nightly('2022-07-25'), 
 )
 
 os.chdir(os.path.dirname(os.path.abspath(__file__)))

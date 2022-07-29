@@ -1,0 +1,140 @@
+[
+    {
+        "catalog_tools_version": 2,
+        "modules": [
+            {
+                "dependencies": [
+                    {
+                        "modules": [],
+                        "package": "swift-standard-library"
+                    }
+                ],
+                "include": [
+                    "Swift"
+                ],
+                "module": "Swift"
+            },
+            {
+                "dependencies": [
+                    {
+                        "modules": [
+                            "Swift"
+                        ],
+                        "package": "swift-standard-library"
+                    }
+                ],
+                "include": [
+                    "_Concurrency"
+                ],
+                "module": "_Concurrency"
+            },
+            {
+                "dependencies": [
+                    {
+                        "modules": [
+                            "Swift"
+                        ],
+                        "package": "swift-standard-library"
+                    }
+                ],
+                "include": [
+                    "_Differentiation"
+                ],
+                "module": "_Differentiation"
+            },
+            {
+                "dependencies": [
+                    {
+                        "modules": [
+                            "Swift",
+                            "_Concurrency"
+                        ],
+                        "package": "swift-standard-library"
+                    }
+                ],
+                "include": [
+                    "Distributed"
+                ],
+                "module": "Distributed"
+            },
+            {
+                "dependencies": [
+                    {
+                        "modules": [
+                            "Swift",
+                            "_RegexParser",
+                            "_StringProcessing"
+                        ],
+                        "package": "swift-standard-library"
+                    }
+                ],
+                "include": [
+                    "RegexBuilder"
+                ],
+                "module": "RegexBuilder"
+            },
+            {
+                "dependencies": [
+                    {
+                        "modules": [
+                            "Swift"
+                        ],
+                        "package": "swift-standard-library"
+                    }
+                ],
+                "include": [
+                    "_RegexParser"
+                ],
+                "module": "_RegexParser"
+            },
+            {
+                "dependencies": [
+                    {
+                        "modules": [
+                            "Swift",
+                            "_RegexParser"
+                        ],
+                        "package": "swift-standard-library"
+                    }
+                ],
+                "include": [
+                    "_StringProcessing"
+                ],
+                "module": "_StringProcessing"
+            }
+        ],
+        "package": "swift-standard-library"
+    },
+    {
+        "catalog_tools_version": 2,
+        "modules": [
+            {
+                "dependencies": [
+                    {
+                        "modules": [],
+                        "package": "swift-core-libraries"
+                    }
+                ],
+                "include": [
+                    "Dispatch"
+                ],
+                "module": "Dispatch"
+            },
+            {
+                "dependencies": [
+                    {
+                        "modules": [
+                            "Dispatch"
+                        ],
+                        "package": "swift-core-libraries"
+                    }
+                ],
+                "include": [
+                    "Foundation"
+                ],
+                "module": "Foundation"
+            }
+        ],
+        "package": "swift-core-libraries"
+    }
+]
