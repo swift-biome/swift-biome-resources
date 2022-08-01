@@ -1,6 +1,6 @@
 [
     {
-        "catalog_tools_version": 2,
+        "catalog_tools_version": 3,
         "modules": [
             {
                 "dependencies": [
@@ -90,7 +90,7 @@
         "package": "swift-standard-library"
     },
     {
-        "catalog_tools_version": 2,
+        "catalog_tools_version": 3,
         "modules": [
             {
                 "dependencies": [

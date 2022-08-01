@@ -91,7 +91,7 @@ for toolchain in toolchains:
     
     catalog = [
         {
-            'catalog_tools_version': 2, 
+            'catalog_tools_version': 3, 
             'package': package,
             'modules': 
             [
