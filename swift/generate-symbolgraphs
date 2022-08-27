@@ -56,6 +56,7 @@ toolchains = (
     swift_nightly('2022-06-20'), 
     swift_nightly('2022-07-25'), 
     swift_nightly('2022-08-09'), 
+    swift_nightly('2022-08-24'), 
 )
 
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
@@ -67,6 +68,10 @@ for toolchain in toolchains:
         'usr', 
         'bin', 
         'swift-symbolgraph-extract')
+    
+    if not os.path.exists(swift_symbolgraph_extract): 
+        print('skipping toolchain {0} (toolchain is unavailable)'.format(toolchain))
+        continue 
     
     os.makedirs(toolchain.version, exist_ok = True)
     os.chdir(toolchain.version)
